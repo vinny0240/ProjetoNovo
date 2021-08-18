@@ -10,15 +10,14 @@
 <?php
 $this->assign('breadcrumb',
   $this->element('content/breadcrumb', [
-    'home' => true,
     'breadcrumb' => [
-      'List Contas',
+      'Todas',
     ]
   ])
 );
 ?>
 
-<div class="card card-primary card-outline">
+<div class="card card-primary card-outline" style="background-color: #2B4560; color: #E1E7E0;">
   <div class="card-header d-sm-flex">
     <h2 class="card-title"><!-- --></h2>
     <div class="card-toolbox">
@@ -33,17 +32,17 @@ $this->assign('breadcrumb',
   </div>
   <!-- /.card-header -->
   <div class="card-body table-responsive p-0">
-    <table class="table table-hover text-nowrap">
+    <table class="table text-nowrap">
         <thead>
           <tr>
-              <th><?= $this->Paginator->sort('id_conta') ?></th>
-              <th><?= $this->Paginator->sort('banco_id') ?></th>
-              <th><?= $this->Paginator->sort('agencia') ?></th>
-              <th><?= $this->Paginator->sort('nconta') ?></th>
-              <th><?= $this->Paginator->sort('saldo') ?></th>
-              <th><?= $this->Paginator->sort('created') ?></th>
-              <th><?= $this->Paginator->sort('modified') ?></th>
-              <th class="actions"><?= __('Actions') ?></th>
+              <th><?= $this->Paginator->sort('Id_conta') ?></th>
+              <th><?= $this->Paginator->sort('Banco') ?></th>
+              <th><?= $this->Paginator->sort('Agência') ?></th>
+              <th><?= $this->Paginator->sort('Número da conta') ?></th>
+              <th><?= $this->Paginator->sort('Saldo') ?></th>
+              <th><?= $this->Paginator->sort('Criado') ?></th>
+              <th><?= $this->Paginator->sort('Modificado') ?></th>
+              <th class="actions"><?= __('Ações') ?></th>
           </tr>
         </thead>
         <tbody>
@@ -57,9 +56,9 @@ $this->assign('breadcrumb',
             <td><?= h($conta->created) ?></td>
             <td><?= h($conta->modified) ?></td>
             <td class="actions">
-              <?= $this->Html->link(__('View'), ['action' => 'view', $conta->id_conta], ['class'=>'btn btn-xs btn-outline-primary', 'escape'=>false]) ?>
-              <?= $this->Html->link(__('Edit'), ['action' => 'edit', $conta->id_conta], ['class'=>'btn btn-xs btn-outline-primary', 'escape'=>false]) ?>
-              <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $conta->id_conta], ['class'=>'btn btn-xs btn-outline-danger', 'escape'=>false, 'confirm' => __('Are you sure you want to delete # {0}?', $conta->id_conta)]) ?>
+              <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $conta->id_conta], ['class'=>'btn btn-xs btn-outline-primary', 'escape'=>false]) ?>
+              <?= $this->Html->link(__('Editar'), ['action' => 'edit', $conta->id_conta], ['class'=>'btn btn-xs btn-outline-primary', 'escape'=>false]) ?>
+              <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $conta->id_conta], ['class'=>'btn btn-xs btn-outline-danger', 'escape'=>false, 'confirm' => __('Quer mesmo deletar # {0}?', $conta->id_conta)]) ?>
             </td>
           </tr>
           <?php endforeach; ?>

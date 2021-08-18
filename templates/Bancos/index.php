@@ -10,15 +10,14 @@
 <?php
 $this->assign('breadcrumb',
   $this->element('content/breadcrumb', [
-    'home' => true,
     'breadcrumb' => [
-      'List Bancos',
+      'Todos',
     ]
   ])
 );
 ?>
 
-<div class="card card-primary card-outline">
+<div class="card card-primary card-outline" style="background-color: #2B4560; color: #E1E7E0;"  >
   <div class="card-header d-sm-flex">
     <h2 class="card-title"><!-- --></h2>
     <div class="card-toolbox">
@@ -26,17 +25,17 @@ $this->assign('breadcrumb',
             'label'=>false,
             'class' => 'form-control-sm',
           ]); ?>
-      <?= $this->Html->link(__('New Banco'), ['action' => 'add'], ['class' => 'btn btn-primary btn-sm']) ?>
+      <?= $this->Html->link(__('Novo Banco'), ['action' => 'add'], ['class' => 'btn btn-primary btn-sm']) ?>
     </div>
   </div>
   <!-- /.card-header -->
   <div class="card-body table-responsive p-0">
-    <table class="table table-hover text-nowrap">
+    <table class="table text-nowrap">
         <thead>
           <tr>
-              <th><?= $this->Paginator->sort('id_banco') ?></th>
-              <th><?= $this->Paginator->sort('nome') ?></th>
-              <th class="actions"><?= __('Actions') ?></th>
+              <th><?= $this->Paginator->sort('Id_banco') ?></th>
+              <th><?= $this->Paginator->sort('Nome') ?></th>
+              <th class="actions"><?= __('Ações') ?></th>
           </tr>
         </thead>
         <tbody>
@@ -45,9 +44,9 @@ $this->assign('breadcrumb',
             <td><?= $this->Number->format($banco->id_banco) ?></td>
             <td><?= h($banco->nome) ?></td>
             <td class="actions">
-              <?= $this->Html->link(__('View'), ['action' => 'view', $banco->id_banco], ['class'=>'btn btn-xs btn-outline-primary', 'escape'=>false]) ?>
-              <?= $this->Html->link(__('Edit'), ['action' => 'edit', $banco->id_banco], ['class'=>'btn btn-xs btn-outline-primary', 'escape'=>false]) ?>
-              <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $banco->id_banco], ['class'=>'btn btn-xs btn-outline-danger', 'escape'=>false, 'confirm' => __('Are you sure you want to delete # {0}?', $banco->id_banco)]) ?>
+              <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $banco->id_banco], ['class'=>'btn btn-xs btn-outline-primary', 'escape'=>false]) ?>
+              <?= $this->Html->link(__('Editar'), ['action' => 'edit', $banco->id_banco], ['class'=>'btn btn-xs btn-outline-primary', 'escape'=>false]) ?>
+              <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $banco->id_banco], ['class'=>'btn btn-xs btn-outline-danger', 'escape'=>false, 'confirm' => __('Quer mesmo deletar # {0}?', $banco->id_banco)]) ?>
             </td>
           </tr>
           <?php endforeach; ?>
@@ -56,7 +55,7 @@ $this->assign('breadcrumb',
   </div>
   <!-- /.card-body -->
 
-  <div class="card-footer d-md-flex paginator">
+<div class="card-footer d-md-flex paginator">
     <div class="mr-auto" style="font-size:.8rem">
       <?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?>
     </div>

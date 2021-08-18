@@ -24,8 +24,10 @@ $this->assign('breadcrumb',
   <?= $this->Form->create($extrato) ?>
   <div class="card-body">
     <?php
+      $a = ['ENTRADA', 'SAIDA'];
       echo $this->Form->control('valor');
-      echo $this->Form->control('tipo');
+      echo $this->Form->label('tipo');
+      echo $this->Form->select('tipo',['ENTRADA' => 'ENTRADA', 'SAIDA' => 'SAIDA']);
       echo $this->Form->control('conta_id', ['options' => $contas, 'empty' => true]);
       echo $this->Form->control('descricao');
     ?>

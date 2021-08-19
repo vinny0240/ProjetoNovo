@@ -5,20 +5,19 @@
  */
 ?>
 
-<?php $this->assign('title', __('Users') ); ?>
+<?php $this->assign('title', __('Usuários') ); ?>
 
 <?php
 $this->assign('breadcrumb',
   $this->element('content/breadcrumb', [
-    'home' => true,
     'breadcrumb' => [
-      'List Users',
+      'Todos',
     ]
   ])
 );
 ?>
 
-<div class="card card-primary card-outline">
+<div class="card card-primary card-outline" style="background-color: #2B4560; color: #E1E7E0;">
   <div class="card-header d-sm-flex">
     <h2 class="card-title"><!-- --></h2>
     <div class="card-toolbox">
@@ -26,22 +25,22 @@ $this->assign('breadcrumb',
             'label'=>false,
             'class' => 'form-control-sm',
           ]); ?>
-      <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'btn btn-primary btn-sm']) ?>
+      <?= $this->Html->link(__('Novo Usuário'), ['action' => 'add'], ['class' => 'btn btn-primary btn-sm']) ?>
     </div>
   </div>
   <!-- /.card-header -->
   <div class="card-body table-responsive p-0">
-    <table class="table table-hover text-nowrap">
+    <table class="table text-nowrap">
         <thead>
           <tr>
-              <th><?= $this->Paginator->sort('id_user') ?></th>
-              <th><?= $this->Paginator->sort('email') ?></th>
-              <th><?= $this->Paginator->sort('username') ?></th>
-              <th><?= $this->Paginator->sort('cpf') ?></th>
-              <th><?= $this->Paginator->sort('password') ?></th>
-              <th><?= $this->Paginator->sort('created') ?></th>
-              <th><?= $this->Paginator->sort('modified') ?></th>
-              <th class="actions"><?= __('Actions') ?></th>
+              <th><?= $this->Paginator->sort('Id_usuário') ?></th>
+              <th><?= $this->Paginator->sort('Email') ?></th>
+              <th><?= $this->Paginator->sort('Username') ?></th>
+              <th><?= $this->Paginator->sort('Cpf') ?></th>
+              <th><?= $this->Paginator->sort('Senha') ?></th>
+              <th><?= $this->Paginator->sort('Criado') ?></th>
+              <th><?= $this->Paginator->sort('Modificado') ?></th>
+              <th class="actions"><?= __('Ações') ?></th>
           </tr>
         </thead>
         <tbody>
@@ -55,9 +54,9 @@ $this->assign('breadcrumb',
             <td><?= h($user->created) ?></td>
             <td><?= h($user->modified) ?></td>
             <td class="actions">
-              <?= $this->Html->link(__('View'), ['action' => 'view', $user->id_user], ['class'=>'btn btn-xs btn-outline-primary', 'escape'=>false]) ?>
-              <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id_user], ['class'=>'btn btn-xs btn-outline-primary', 'escape'=>false]) ?>
-              <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id_user], ['class'=>'btn btn-xs btn-outline-danger', 'escape'=>false, 'confirm' => __('Are you sure you want to delete # {0}?', $user->id_user)]) ?>
+              <?= $this->Html->link(__('Visualizar'), ['action' => 'view', $user->id_user], ['class'=>'btn btn-xs btn-outline-primary', 'escape'=>false]) ?>
+              <?= $this->Html->link(__('Editar'), ['action' => 'edit', $user->id_user], ['class'=>'btn btn-xs btn-outline-primary', 'escape'=>false]) ?>
+              <?= $this->Form->postLink(__('Deletar'), ['action' => 'delete', $user->id_user], ['class'=>'btn btn-xs btn-outline-danger', 'escape'=>false, 'confirm' => __('Quer mesmo deletar # {0}?', $user->id_user)]) ?>
             </td>
           </tr>
           <?php endforeach; ?>

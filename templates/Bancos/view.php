@@ -89,7 +89,7 @@ $this->assign('breadcrumb',
             <td class="actions">
               <?= $this->Html->link(__('Visualizar'), ['controller' => 'Contas', 'action' => 'view', $contas->id_conta], ['class'=>'btn btn-xs btn-outline-primary']) ?>
               <?= $this->Html->link(__('Editar'), ['controller' => 'Contas', 'action' => 'edit', $contas->id_conta], ['class'=>'btn btn-xs btn-outline-primary']) ?>
-              <?= $this->Form->postLink(__('Deletar'), ['controller' => 'Contas', 'action' => 'delete', $contas->id_conta], ['class'=>'btn btn-xs btn-outline-danger', 'confirm' => __('Are you sure you want to delete # {0}?', $contas->id_conta)]) ?>
+              <?= $this->Form->postLink(__('Deletar'), ['controller' => 'Contas', 'action' => 'delete', $contas->id_conta], ['class'=>'btn btn-xs btn-outline-danger', 'confirm' => __('Quer mesmo deletar # {0}?', $contas->id_conta)]) ?>
             </td>
         </tr>
         <?php endforeach; ?>

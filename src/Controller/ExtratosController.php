@@ -163,13 +163,14 @@ class ExtratosController extends AppController
     public function export()
     {
         $this->setResponse($this->getResponse()->withDownload('Extratos.csv'));
-        $header = Array('id','Valor','Tipo','Conta','Created','Modified','Descrição');
+        $header = ['id','Valor','Tipo','Conta','Created','Modified','Descrição'];
         $data = $this->Extratos->find('all');
         $this->set(compact('data'));
         $this->viewBuilder()
             ->setClassName('CsvView.Csv')
             ->setOptions([
                 'serialize' => 'data',
+                'newline' => '\r\n',
                 'header' => $header,
             ]);
     }

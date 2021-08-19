@@ -8,14 +8,14 @@
 <?php $this->assign('title', __('Contas') ); ?>
 
 <?php
-$this->assign('breadcrumb',
-  $this->element('content/breadcrumb', [
-    'home' => true,
-    'breadcrumb' => [
-      'List Contas',
-    ]
-  ])
-);
+// $this->assign('breadcrumb',
+//   $this->element('content/breadcrumb', [
+//     'home' => true,
+//     'breadcrumb' => [
+//       'List Contas',
+//     ]
+//   ])
+// );
 ?>
 
 <div class="card card-primary card-outline">
@@ -28,7 +28,7 @@ $this->assign('breadcrumb',
           ]); ?>
       <?= $this->Html->link(__('Nova Conta'), ['action' => 'add'], ['class' => 'btn btn-primary btn-sm']) ?>
       <?= $this->Html->link(__('Nova Transação'), ['controller' => 'extratos', 'action' => 'add'], ['class' => 'btn btn-primary btn-sm']) ?>
-      <?= $this->Html->link(__('Extratos'), ['controller' => 'extratos', 'action' => 'index'], ['class' => 'btn btn-primary btn-sm']) ?>
+      <!-- <?= $this->Html->link(__('Extratos'), ['controller' => 'extratos', 'action' => 'index'], ['class' => 'btn btn-primary btn-sm']) ?> -->
     </div>
   </div>
   <!-- /.card-header -->

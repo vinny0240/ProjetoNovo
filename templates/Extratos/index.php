@@ -8,14 +8,14 @@
 <?php $this->assign('title', __('Extratos') ); ?>
 
 <?php
-$this->assign('breadcrumb',
-  $this->element('content/breadcrumb', [
-    'home' => true,
-    'breadcrumb' => [
-      'List Extratos',
-    ]
-  ])
-);
+// $this->assign('breadcrumb',
+//   $this->element('content/breadcrumb', [
+//     'home' => true,
+//     'breadcrumb' => [
+//       'List Extratos',
+//     ]
+//   ])
+// );
 ?>
 
 <div class="card card-primary card-outline">

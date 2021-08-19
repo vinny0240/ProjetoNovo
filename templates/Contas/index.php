@@ -28,7 +28,6 @@
           ]); ?>
       <?= $this->Html->link(__('Nova Conta'), ['action' => 'add'], ['class' => 'btn btn-primary btn-sm']) ?>
       <?= $this->Html->link(__('Nova Transação'), ['controller' => 'extratos', 'action' => 'add'], ['class' => 'btn btn-primary btn-sm']) ?>
-      <!-- <?= $this->Html->link(__('Extratos'), ['controller' => 'extratos', 'action' => 'index'], ['class' => 'btn btn-primary btn-sm']) ?> -->
     </div>
   </div>
   <!-- /.card-header -->

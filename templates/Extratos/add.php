@@ -5,7 +5,7 @@
  */
 ?>
 
-<!-- <?php $this->assign('title', __('Adicionar Extrato') ); ?> -->
+ <?php $this->assign('title', __(' ') ); ?> 
 
 <?php
 $this->assign('breadcrumb',

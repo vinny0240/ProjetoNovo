@@ -38,7 +38,7 @@
             </tr>
             <?php foreach ($extrato as $extrato) : ?>
             <tr>
-                <td><?= $extrato->has('conta') ? $this->Html->find($extrato->conta->nconta, ['controller' => 'Contas', 'action' => 'view', $extrato->conta->id_conta]) : '' ?></td>
+                <td><?= h($extrato->conta->nconta) ?></td>
                 <td><?= h($extrato->created) ?></td>
                 <td><?= h($extrato->descricao) ?></td>
                 <td style="color: green;">+<?= $this->Number->format($extrato->valor) ?></td>

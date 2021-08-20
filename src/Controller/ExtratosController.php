@@ -115,7 +115,7 @@ class ExtratosController extends AppController
     public function receitas()
      {
 	$this->viewBuilder()->enableAutoLayout(false); 
-	$extrato = $this->Extratos->find('all',['conditions'=>['Extratos.tipo' => 'ENTRADA']]);
+	$extrato = $this->Extratos->find('all',['conditions'=>['Extratos.tipo' => 'ENTRADA'],'contain'=>['Contas']]);
 	$this->viewBuilder()->setClassName('CakePdf.Pdf');
 	$this->viewBuilder()->setOption(
 		'pdfConfig',
@@ -125,13 +125,13 @@ class ExtratosController extends AppController
 			'filename' => 'Receitas' . '.pdf' //// This can be omitted if you want file name based on URL.
 		]
 	);
-	$this->set('extrato', $extrato);
+	$this->set(compact('extrato'));
     }
 
     public function despesas()
      {
 	$this->viewBuilder()->enableAutoLayout(false); 
-	$extrato = $this->Extratos->find('all',['conditions'=>['Extratos.tipo' => 'SAIDA']]);
+	$extrato = $this->Extratos->find('all',['conditions'=>['Extratos.tipo' => 'SAIDA'],'contain'=>['Contas']]);
 	$this->viewBuilder()->setClassName('CakePdf.Pdf');
 	$this->viewBuilder()->setOption(
 		'pdfConfig',
@@ -147,7 +147,7 @@ class ExtratosController extends AppController
     public function rd()
      {
 	$this->viewBuilder()->enableAutoLayout(false); 
-	$extrato = $this->Extratos->find('all');
+	$extrato = $this->Extratos->find('all',['contain'=>['Contas']]);
 	$this->viewBuilder()->setClassName('CakePdf.Pdf');
 	$this->viewBuilder()->setOption(
 		'pdfConfig',
@@ -170,7 +170,6 @@ class ExtratosController extends AppController
             ->setClassName('CsvView.Csv')
             ->setOptions([
                 'serialize' => 'data',
-                'newline' => '\r\n',
                 'header' => $header,
             ]);
     }

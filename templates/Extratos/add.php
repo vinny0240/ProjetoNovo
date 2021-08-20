@@ -5,25 +5,28 @@
  */
 ?>
 
-<!-- <?php $this->assign('title', __('Add Extrato') ); ?> -->
+<!-- <?php $this->assign('title', __('Adicionar Extrato') ); ?> -->
 
 <?php
 $this->assign('breadcrumb',
   $this->element('content/breadcrumb', [
-    'home' => true,
     'breadcrumb' => [
-      'List Extratos' => ['action'=>'index'],
-      'Add',
+      'Todos' => ['action'=>'index'],
+      'Adição',
     ]
   ])
 );
 ?>
 
 
-<div class="card card-primary card-outline">
+<div class="card card-primary card-outline" style="background-color: #2B4560; color: #E1E7E0;">
   <?= $this->Form->create($extrato) ?>
   <div class="card-body">
     <?php
+      echo $this->Form->control('Valor');
+      echo $this->Form->control('Tipo');
+      echo $this->Form->control('Conta', ['options' => $contas, 'empty' => true]);
+      echo $this->Form->control('Descrição');
       $a = ['ENTRADA', 'SAIDA'];
       echo $this->Form->control('valor');
       echo $this->Form->label('tipo');
@@ -35,8 +38,8 @@ $this->assign('breadcrumb',
 
   <div class="card-footer d-flex">
     <div class="ml-auto">
-      <?= $this->Form->button(__('Save')) ?>
-      <?= $this->Html->link(__('Cancel'), ['action'=>'index'], ['class'=>'btn btn-default']) ?>
+      <?= $this->Form->button(__('Salvar')) ?>
+      <?= $this->Html->link(__('Cancelar'), ['action'=>'index'], ['class'=>'btn btn-default']) ?>
     </div>
   </div>
 

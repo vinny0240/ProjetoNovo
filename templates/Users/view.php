@@ -6,25 +6,24 @@
 ?>
 
 <?php
-$this->assign('title', __('User') );
+$this->assign('title', __('Usuário') );
 
 $this->assign('breadcrumb',
   $this->element('content/breadcrumb', [
-    'home' => true,
     'breadcrumb' => [
-      'List Users' => ['action'=>'index'],
-      'View',
+      'Todos' => ['action'=>'index'],
+      'Visualização',
     ]
   ])
 );
 ?>
 
-<div class="view card card-primary card-outline">
+<div class="view card card-primary card-outline" style="background-color: #2B4560; color: #E1E7E0;">
   <div class="card-header d-sm-flex">
     <h2 class="card-title"><?= h($user->nome) ?></h2>
   </div>
   <div class="card-body table-responsive p-0">
-    <table class="table table-hover text-nowrap">
+    <table class="table text-nowrap">
         <tr>
             <th><?= __('Email') ?></th>
             <td><?= h($user->email) ?></td>
@@ -38,19 +37,19 @@ $this->assign('breadcrumb',
             <td><?= h($user->cpf) ?></td>
         </tr>
         <tr>
-            <th><?= __('Password') ?></th>
+            <th><?= __('Senha') ?></th>
             <td><?= h($user->password) ?></td>
         </tr>
         <tr>
-            <th><?= __('Id User') ?></th>
+            <th><?= __('Id Usuário') ?></th>
             <td><?= $this->Number->format($user->id_user) ?></td>
         </tr>
         <tr>
-            <th><?= __('Created') ?></th>
+            <th><?= __('Criado') ?></th>
             <td><?= h($user->created) ?></td>
         </tr>
         <tr>
-            <th><?= __('Modified') ?></th>
+            <th><?= __('Modificado') ?></th>
             <td><?= h($user->modified) ?></td>
         </tr>
     </table>
@@ -58,14 +57,14 @@ $this->assign('breadcrumb',
   <div class="card-footer d-flex">
     <div class="">
       <?= $this->Form->postLink(
-          __('Delete'),
+          __('Deletar'),
           ['action' => 'delete',  $user->id_user],
-          ['confirm' => __('Are you sure you want to delete # {0}?',  $user->id_user), 'class' => 'btn btn-danger']
+          ['confirm' => __('Quer mesmo deletar # {0}?',  $user->id_user), 'class' => 'btn btn-danger']
       ) ?>
     </div>
     <div class="ml-auto">
-      <?= $this->Html->link(__('Edit'), ['action' => 'edit',  $user->id_user], ['class' => 'btn btn-secondary']) ?>
-      <?= $this->Html->link(__('Cancel'), ['action'=>'index'], ['class'=>'btn btn-default']) ?>
+      <?= $this->Html->link(__('Editar'), ['action' => 'edit',  $user->id_user], ['class' => 'btn btn-secondary']) ?>
+      <?= $this->Html->link(__('Cancelar'), ['action'=>'index'], ['class'=>'btn btn-default']) ?>
     </div>
   </div>
 </div>

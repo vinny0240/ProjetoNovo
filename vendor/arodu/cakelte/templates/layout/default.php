@@ -114,12 +114,6 @@ a {
     </aside>
     <!-- /.control-sidebar -->
 
-    <!-- Main Footer -->
-    <!-- <footer class="main-footer">
-      <?= $this->element('footer/main') ?>
-    </footer>
-  </div> -->
-  <!-- ./wrapper -->
 
   <!-- REQUIRED SCRIPTS -->
 

@@ -10,21 +10,20 @@ $this->assign('title', __('Banco') );
 
 $this->assign('breadcrumb',
   $this->element('content/breadcrumb', [
-    'home' => true,
     'breadcrumb' => [
-      'List Bancos' => ['action'=>'index'],
-      'View',
+      'Todos' => ['action'=>'index'],
+      'Visualização',
     ]
   ])
 );
 ?>
 
-<div class="view card card-primary card-outline">
+<div class="view card card-primary card-outline" style="background-color: #2B4560; color: #E1E7E0;">
   <div class="card-header d-sm-flex">
     <h2 class="card-title"><?= h($banco->nome) ?></h2>
   </div>
   <div class="card-body table-responsive p-0">
-    <table class="table table-hover text-nowrap">
+    <table class="table text-nowrap">
         <tr>
             <th><?= __('Nome') ?></th>
             <td><?= h($banco->nome) ?></td>
@@ -38,38 +37,38 @@ $this->assign('breadcrumb',
   <div class="card-footer d-flex">
     <div class="">
       <?= $this->Form->postLink(
-          __('Delete'),
+          __('Deletar'),
           ['action' => 'delete',  $banco->id_banco],
-          ['confirm' => __('Are you sure you want to delete # {0}?',  $banco->id_banco), 'class' => 'btn btn-danger']
+          ['confirm' => __('Quer mesmo deletar # {0}?',  $banco->id_banco), 'class' => 'btn btn-danger']
       ) ?>
     </div>
     <div class="ml-auto">
-      <?= $this->Html->link(__('Edit'), ['action' => 'edit',  $banco->id_banco], ['class' => 'btn btn-secondary']) ?>
-      <?= $this->Html->link(__('Cancel'), ['action'=>'index'], ['class'=>'btn btn-default']) ?>
+      <?= $this->Html->link(__('Editar'), ['action' => 'edit',  $banco->id_banco], ['class' => 'btn btn-secondary']) ?>
+      <?= $this->Html->link(__('Cancelar'), ['action'=>'index'], ['class'=>'btn btn-default']) ?>
     </div>
   </div>
 </div>
 
 
-<div class="related related-contas view card">
+<div class="related related-contas view card" style="background-color: #2B4560; color: #E1E7E0;">
   <div class="card-header d-sm-flex">
-    <h3 class="card-title"><?= __('Related Contas') ?></h3>
+    <h3 class="card-title"><?= __('Contas Relacionadas') ?></h3>
     <div class="card-toolbox">
-      <?= $this->Html->link(__('New'), ['controller' => 'Contas' , 'action' => 'add'], ['class' => 'btn btn-primary btn-sm']) ?>
-      <?= $this->Html->link(__('List '), ['controller' => 'Contas' , 'action' => 'index'], ['class' => 'btn btn-primary btn-sm']) ?>
+      <?= $this->Html->link(__('Novo'), ['controller' => 'Contas' , 'action' => 'add'], ['class' => 'btn btn-primary btn-sm']) ?>
+      <?= $this->Html->link(__('Tudo '), ['controller' => 'Contas' , 'action' => 'index'], ['class' => 'btn btn-primary btn-sm']) ?>
     </div>
   </div>
   <div class="card-body table-responsive p-0">
-    <table class="table table-hover text-nowrap">
+    <table class="table text-nowrap">
       <tr>
           <th><?= __('Id Conta') ?></th>
           <th><?= __('Banco Id') ?></th>
-          <th><?= __('Agencia') ?></th>
-          <th><?= __('Nconta') ?></th>
+          <th><?= __('Agência') ?></th>
+          <th><?= __('Número da conta') ?></th>
           <th><?= __('Saldo') ?></th>
-          <th><?= __('Created') ?></th>
-          <th><?= __('Modified') ?></th>
-          <th class="actions"><?= __('Actions') ?></th>
+          <th><?= __('Criado') ?></th>
+          <th><?= __('Modificado') ?></th>
+          <th class="actions"><?= __('Ações') ?></th>
       </tr>
       <?php if (empty($banco->contas)) { ?>
         <tr>
@@ -88,9 +87,9 @@ $this->assign('breadcrumb',
             <td><?= h($contas->created) ?></td>
             <td><?= h($contas->modified) ?></td>
             <td class="actions">
-              <?= $this->Html->link(__('View'), ['controller' => 'Contas', 'action' => 'view', $contas->id_conta], ['class'=>'btn btn-xs btn-outline-primary']) ?>
-              <?= $this->Html->link(__('Edit'), ['controller' => 'Contas', 'action' => 'edit', $contas->id_conta], ['class'=>'btn btn-xs btn-outline-primary']) ?>
-              <?= $this->Form->postLink(__('Delete'), ['controller' => 'Contas', 'action' => 'delete', $contas->id_conta], ['class'=>'btn btn-xs btn-outline-danger', 'confirm' => __('Are you sure you want to delete # {0}?', $contas->id_conta)]) ?>
+              <?= $this->Html->link(__('Visualizar'), ['controller' => 'Contas', 'action' => 'view', $contas->id_conta], ['class'=>'btn btn-xs btn-outline-primary']) ?>
+              <?= $this->Html->link(__('Editar'), ['controller' => 'Contas', 'action' => 'edit', $contas->id_conta], ['class'=>'btn btn-xs btn-outline-primary']) ?>
+              <?= $this->Form->postLink(__('Deletar'), ['controller' => 'Contas', 'action' => 'delete', $contas->id_conta], ['class'=>'btn btn-xs btn-outline-danger', 'confirm' => __('Quer mesmo deletar # {0}?', $contas->id_conta)]) ?>
             </td>
         </tr>
         <?php endforeach; ?>

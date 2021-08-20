@@ -10,21 +10,20 @@ $this->assign('title', __('Extrato') );
 
 $this->assign('breadcrumb',
   $this->element('content/breadcrumb', [
-    'home' => true,
     'breadcrumb' => [
-      'List Extratos' => ['action'=>'index'],
-      'View',
+      'Todos' => ['action'=>'index'],
+      'Visualização',
     ]
   ])
 );
 ?>
 
-<div class="view card card-primary card-outline">
+<div class="view card card-primary card-outline" style="background-color: #2B4560; color: #E1E7E0;">
   <div class="card-header d-sm-flex">
     <h2 class="card-title"><?= h($extrato->id_extrato) ?></h2>
   </div>
   <div class="card-body table-responsive p-0">
-    <table class="table table-hover text-nowrap">
+    <table class="table text-nowrap">
         <tr>
             <th><?= __('Tipo') ?></th>
             <td><?= h($extrato->tipo) ?></td>
@@ -34,7 +33,7 @@ $this->assign('breadcrumb',
             <td><?= $extrato->has('conta') ? $this->Html->link($extrato->conta->nconta, ['controller' => 'Contas', 'action' => 'view', $extrato->conta->id_conta]) : '' ?></td>
         </tr>
         <tr>
-            <th><?= __('Descricao') ?></th>
+            <th><?= __('Descrição') ?></th>
             <td><?= h($extrato->descricao) ?></td>
         </tr>
         <tr>
@@ -46,11 +45,11 @@ $this->assign('breadcrumb',
             <td><?= $this->Number->format($extrato->valor) ?></td>
         </tr>
         <tr>
-            <th><?= __('Created') ?></th>
+            <th><?= __('Criado') ?></th>
             <td><?= h($extrato->created) ?></td>
         </tr>
         <tr>
-            <th><?= __('Modified') ?></th>
+            <th><?= __('Modificado') ?></th>
             <td><?= h($extrato->modified) ?></td>
         </tr>
     </table>
@@ -58,14 +57,14 @@ $this->assign('breadcrumb',
   <div class="card-footer d-flex">
     <div class="">
       <?= $this->Form->postLink(
-          __('Delete'),
+          __('Deletar'),
           ['action' => 'delete',  $extrato->id_extrato],
-          ['confirm' => __('Are you sure you want to delete # {0}?',  $extrato->id_extrato), 'class' => 'btn btn-danger']
+          ['confirm' => __('Quer mesmo deletar # {0}?',  $extrato->id_extrato), 'class' => 'btn btn-danger']
       ) ?>
     </div>
     <div class="ml-auto">
-      <?= $this->Html->link(__('Edit'), ['action' => 'edit',  $extrato->id_extrato], ['class' => 'btn btn-secondary']) ?>
-      <?= $this->Html->link(__('Cancel'), ['action'=>'index'], ['class'=>'btn btn-default']) ?>
+      <?= $this->Html->link(__('Editar'), ['action' => 'edit',  $extrato->id_extrato], ['class' => 'btn btn-secondary']) ?>
+      <?= $this->Html->link(__('Cancelar'), ['action'=>'index'], ['class'=>'btn btn-default']) ?>
     </div>
   </div>
 </div>

@@ -5,6 +5,7 @@
 /logs/*
 /tmp/*
 /vendor/*
+!/vendor/arodu
 
 # OS generated files #
 ######################

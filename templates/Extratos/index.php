@@ -8,6 +8,13 @@
 <?php $this->assign('title', __('Extratos') ); ?>
 
 <?php
+$this->assign('breadcrumb',
+  $this->element('content/breadcrumb', [
+    'breadcrumb' => [
+      'Todos',
+    ]
+  ])
+);
 // $this->assign('breadcrumb',
 //   $this->element('content/breadcrumb', [
 //     'home' => true,
@@ -18,7 +25,7 @@
 // );
 ?>
 
-<div class="card card-primary card-outline">
+<div class="card card-primary card-outline" style="background-color: #2B4560; color: #E1E7E0;">
   <div class="card-header d-sm-flex">
     <h2 class="card-title">
     <?= $this->Html->link(__('Receitas'), ['action' => 'receitas'], ['class' => 'btn btn-primary btn-sm']) ?>
@@ -29,16 +36,16 @@
   </div>
   <!-- /.card-header -->
   <div class="card-body table-responsive p-0">
-    <table class="table table-hover text-nowrap">
+    <table class="table text-nowrap">
         <thead>
           <tr>
-              <th><?= $this->Paginator->sort('id_extrato') ?></th>
-              <th><?= $this->Paginator->sort('valor') ?></th>
-              <th><?= $this->Paginator->sort('tipo') ?></th>
-              <th><?= $this->Paginator->sort('conta_id') ?></th>
-              <th><?= $this->Paginator->sort('created') ?></th>
-              <th><?= $this->Paginator->sort('modified') ?></th>
-              <th><?= $this->Paginator->sort('descricao') ?></th>
+              <th><?= $this->Paginator->sort('Id_extrato') ?></th>
+              <th><?= $this->Paginator->sort('Valor') ?></th>
+              <th><?= $this->Paginator->sort('Tipo') ?></th>
+              <th><?= $this->Paginator->sort('Conta') ?></th>
+              <th><?= $this->Paginator->sort('Criado') ?></th>
+              <th><?= $this->Paginator->sort('Modificado') ?></th>
+              <th><?= $this->Paginator->sort('Descrição') ?></th>
           </tr>
         </thead>
         <tbody>

@@ -27,6 +27,12 @@ $this->assign('breadcrumb',
       echo $this->Form->control('Tipo');
       echo $this->Form->control('Conta', ['options' => $contas, 'empty' => true]);
       echo $this->Form->control('Descrição');
+      $a = ['ENTRADA', 'SAIDA'];
+      echo $this->Form->control('valor');
+      echo $this->Form->label('tipo');
+      echo $this->Form->select('tipo',['ENTRADA' => 'ENTRADA', 'SAIDA' => 'SAIDA']);
+      echo $this->Form->control('conta_id', ['options' => $contas, 'empty' => true]);
+      echo $this->Form->control('descricao');
     ?>
   </div>
 

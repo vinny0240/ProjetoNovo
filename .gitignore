@@ -5,7 +5,7 @@
 /logs/*
 /tmp/*
 /vendor/*
-!/vendor/arodu/cakelte/templates
+!/vendor/arodu/templates
 
 # OS generated files #
 ######################

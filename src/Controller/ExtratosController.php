@@ -49,6 +49,7 @@ class ExtratosController extends AppController
      */
     public function add()
     {
+        
         $extrato = $this->Extratos->newEmptyEntity();
         if ($this->request->is('post')) {
             $extrato = $this->Extratos->patchEntity($extrato, $this->request->getData());
@@ -60,7 +61,10 @@ class ExtratosController extends AppController
             $this->Flash->error(__('The extrato could not be saved. Please, try again.'));
         }
         $contas = $this->Extratos->Contas->find('list', ['limit' => 200]);
-        $this->set(compact('extrato', 'contas'));
+        $groups = ['ENTRADA','SAIDA'];
+        $this->set(compact('extrato', 'contas','groups'));
+        // $this->set('groups', $this->Users->Groups->find('list')->all());
+        
     }
 
     /**
@@ -159,13 +163,14 @@ class ExtratosController extends AppController
     public function export()
     {
         $this->setResponse($this->getResponse()->withDownload('Extratos.csv'));
-        $header = Array('id','Valor','Tipo','Conta','Created','Modified','Descrição');
+        $header = ['id','Valor','Tipo','Conta','Created','Modified','Descrição'];
         $data = $this->Extratos->find('all');
         $this->set(compact('data'));
         $this->viewBuilder()
             ->setClassName('CsvView.Csv')
             ->setOptions([
                 'serialize' => 'data',
+                'newline' => '\r\n',
                 'header' => $header,
             ]);
     }

@@ -15,6 +15,14 @@ $this->assign('breadcrumb',
     ]
   ])
 );
+// $this->assign('breadcrumb',
+//   $this->element('content/breadcrumb', [
+//     'home' => true,
+//     'breadcrumb' => [
+//       'List Extratos',
+//     ]
+//   ])
+// );
 ?>
 
 <div class="card card-primary card-outline" style="background-color: #2B4560; color: #E1E7E0;">

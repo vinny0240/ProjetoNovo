@@ -3,6 +3,6 @@
     <?= $this->Html->image('CakeLte./AdminLTE/dist/img/user2-160x160.jpg', ['class'=>'img-circle elevation-2', 'alt'=>'User Image']) ?>
   </div> -->
   <div class="info" style="color: #E1E7E0">
-    <a href="#" class="d-block" style="color: #E1E7E0">Vinicius Lindo</a>
+    <a href="#" class="d-block" style="color: #E1E7E0"><?= $this->Html->link(__('Sair'),['controller' => 'users','action' => 'logout'], ['class' => 'nav-link']) ?></a>
   </div>
 </div>

@@ -35,6 +35,17 @@ class Plugin extends BasePlugin {
    * @param \Cake\Routing\RouteBuilder $routes The route builder to update.
    * @return void
    */
+  public function routes(RouteBuilder $routes): void {
+    $routes->plugin(
+      'CakeLte',
+      ['path' => '/cake_lte'],
+      function (RouteBuilder $builder) {
+        // Add custom routes here
+        $builder->connect('/debug', ['controller' => 'Pages', 'action' => 'debug']);
+      }
+    );
+    parent::routes($routes);
+  }
 
   /**
    * Add middleware for the plugin.

@@ -9,6 +9,10 @@
         {
             "name": "arodu/cakelteDefault",
             "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vinny0240/ProjetoNovo/tree/cakelte/vendor/arodu/cakelte"
+            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/arodu/cakelte/zipball/6fb9f3a4588e7770258de079d0aca4a50398ba0e",

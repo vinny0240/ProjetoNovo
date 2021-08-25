@@ -7,11 +7,12 @@
     "content-hash": "a60ad6dd0344551d07f01b5c5e594a8b",
     "packages": [
         {
-            "name": "arodu/cakelteDefault",
+            "name": "arodu/cakelteD",
             "version": "v0.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/vinny0240/ProjetoNovo/tree/cakelte/vendor/arodu/cakelte"
+                "url": "https://github.com/arodu/cakelte.git",
+                "reference": "6fb9f3a4588e7770258de079d0aca4a50398ba0e"
             },
             "dist": {
                 "type": "zip",

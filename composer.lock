@@ -7,7 +7,7 @@
     "content-hash": "a60ad6dd0344551d07f01b5c5e594a8b",
     "packages": [
         {
-            "name": "arodu/cakelte",
+            "name": "arodu/cakelteD",
             "version": "v0.2.0",
             "source": {
                 "type": "git",

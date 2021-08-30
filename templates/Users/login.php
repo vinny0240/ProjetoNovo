@@ -16,7 +16,8 @@
     <?= $this->Form->control('username', [
       'label' => false,
       'placeholder' => __('Username'),
-      'append' => '<i class="fas fa-user"></i>'
+      'append' => '<i class="fas fa-user"></i>',
+
     ]) ?>
 
     <?= $this->Form->control('password', [

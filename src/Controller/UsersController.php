@@ -134,6 +134,8 @@ class UsersController extends AppController
         parent::beforeFilter($event);
 
         $this->Authentication->allowUnauthenticated(['login', 'add', 'register']);
+        $user =  $this->Authentication->getIdentity();
+
     }
     public function logout()
     {
